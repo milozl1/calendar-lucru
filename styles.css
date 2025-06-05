@@ -1,0 +1,145 @@
+/* Stil general pentru container */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f7f9fc;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Titlu lună + butoane */
+#calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#calendarHeader h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Calendar grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  background: #fafafa;
+  border-radius: 8px;
+  min-height: 80px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.day:hover {
+  background: #f0f8ff;
+  border-color: #cce4ff;
+}
+
+.day select {
+  margin-top: 5px;
+  padding: 4px 6px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Zilele de antet (Lun, Mar...) */
+.calendar-grid > div:nth-child(-n + 7) {
+  font-weight: bold;
+  background: #e8f0fe;
+  border: none;
+  text-align: center;
+}
+
+/* Zile dezactivate */
+.day.disabled,
+.day select:disabled {
+  background: #eeeeee;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Weekend */
+.day.weekend {
+  background: #fff6f6;
+  color: #999;
+}
+
+/* Sărbătoare legală în weekend */
+.day.holiday-weekend {
+  background: #fff0f0;
+  color: #d33;
+  border: 1px dashed #d33;
+}
+
+/* Rezumat jos */
+#summary {
+  margin-top: 20px;
+  background: #fff;
+  border-left: 5px solid #007bff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Evidențiere tipuri de zile */
+.day.worked-office {
+  background-color: #e0f0ff;
+  border: 2px solid #007bff;
+  color: #004a99;
+}
+
+.day.free {
+  background-color: #fff4c4;
+  border: 2px solid #ffd700;
+  color: #a57f00;
+}
+
+.day.weekend {
+  background-color: #f2f2f2;
+  color: #999;
+  border: 1px solid #ddd;
+}
+
+.day.holiday {
+  background-color: #ffe0e0;
+  border: 2px solid #ff4d4d;
+  color: #b30000;
+}
+
+.day.remote-work {
+  background-color: #d6f5d6;
+  border: 2px solid #5cd65c;
+  color: #267326;
+}
