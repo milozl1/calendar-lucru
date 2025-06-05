@@ -272,8 +272,8 @@ function updateSummary(an, luna) {
   summaryElement.innerHTML = `
     <strong>Rezumat:</strong><br/>
     - Zile Office: ${counts.office}<br/>
-    - Zile Home: ${counts.home} ${
-    counts.home - counts.vacation > 12 ? "(⚠ !DEPASIT! ⚠)" : ""
+    - Zile Home: ${counts.home} ${Add commentMore actions
+      counts.home > 12 ? "(⚠ !DEPASIT! ⚠)" : ""
   }<br/>
     - Zile Vacanță: ${counts.vacation}<br/>
     - Total zile alese: ${counts.office + counts.home + counts.vacation}
