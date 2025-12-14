@@ -3,8 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Atelier Élan — Cosmetică facială premium</title>
-  <meta name="description" content="Tratamente faciale premium, curate și personalizate. Rezultate vizibile, ritualuri blânde și o experiență calmă. Programează-te rapid pe WhatsApp." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Atelier Élan — Cosmetică facială premium | Tratamente profesionale București</title>
+  <meta name="description" content="Tratamente faciale premium, curate și personalizate. Rezultate vizibile, ritualuri blânde și o experiență calmă. Programează-te rapid pe WhatsApp. 8+ ani experiență în estetică facială." />
+  <meta name="keywords" content="cosmetică facială, tratamente faciale, curățare profesională, anti-aging, tratament acnee, hidratare profundă, București, estetică facială" />
+  <meta name="author" content="Atelier Élan" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://atelierelan.ro/" />
+  <meta property="og:title" content="Atelier Élan — Cosmetică facială premium" />
+  <meta property="og:description" content="Tratamente faciale premium, curate și personalizate. 8+ ani experiență în estetică facială. Programează-te rapid pe WhatsApp." />
+  <meta property="og:image" content="https://atelierelan.ro/img/og-image.jpg" />
+  <meta property="og:locale" content="ro_RO" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://atelierelan.ro/" />
+  <meta property="twitter:title" content="Atelier Élan — Cosmetică facială premium" />
+  <meta property="twitter:description" content="Tratamente faciale premium, curate și personalizate. 8+ ani experiență în estetică facială." />
+  <meta property="twitter:image" content="https://atelierelan.ro/img/og-image.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c58b7c'/><circle cx='30' cy='35' r='12' fill='%23fff' opacity='0.9'/></svg>" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#fbf7f4" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
   <!-- Fonts (elegant + modern) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +40,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Atelier Élan",
+    "description": "Cosmetică facială premium - Tratamente personalizate pentru îngrijirea pielii",
+    "image": "https://atelierelan.ro/img/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "București",
+      "addressCountry": "RO"
+    },
+    "telephone": "+40700111222",
+    "url": "https://atelierelan.ro",
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://instagram.com/atelierelan",
+      "https://facebook.com/atelierelan"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -425,10 +482,53 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Atelier Élan. Toate drepturile rezervate.</p>
-      <p class="tiny">Design & frontend: premium, minimalist • optimizat pentru programări.</p>
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-name">Atelier Élan</span>
+            <span class="brand-tagline">Cosmetică facială premium</span>
+          </span>
+        </div>
+        <p class="footer-desc">Frumusețea ta, tratată cu grijă profesională. Tratamente faciale personalizate în București.</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigare</h4>
+          <nav aria-label="Footer navigation">
+            <a href="#despre">Despre mine</a>
+            <a href="#servicii">Servicii</a>
+            <a href="#de-ce">De ce eu</a>
+            <a href="#testimoniale">Testimoniale</a>
+          </nav>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <nav aria-label="Contact links">
+            <a href="tel:+40700111222">+40 700 111 222</a>
+            <a href="https://wa.me/40700111222" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Atelier Élan. Toate drepturile rezervate.</p>
+        <p class="tiny">Design premium & optimizat pentru programări • Made with care in București</p>
+      </div>
     </div>
   </footer>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-mark"></div>
+      <p class="loader-text">Atelier Élan</p>
+    </div>
+  </div>
 
   <!-- Floating CTA (mobile-friendly) -->
   <a class="floating-cta"

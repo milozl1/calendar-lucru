@@ -287,6 +287,14 @@ strong{ color: var(--text); font-weight: 600; }
   border: 1px solid rgba(31,26,23,0.08);
   border-radius: 16px;
   color: rgba(31,26,23,0.72);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.hero-trust li:hover{
+  background: rgba(255,255,255,0.75);
+  border-color: rgba(197,139,124,0.20);
+  box-shadow: 0 8px 20px rgba(31,26,23,0.08);
 }
 
 /* Hero visual */
@@ -302,10 +310,26 @@ strong{ color: var(--text); font-weight: 600; }
   height: 320px;
   background:
     radial-gradient(600px 340px at 20% 10%, rgba(231,184,173,0.35), transparent 60%),
-    linear-gradient(180deg, rgba(31,26,23,0.0), rgba(31,26,23,0.06)),
-    url("../img/hero.jpg");
+    radial-gradient(500px 400px at 80% 70%, rgba(197,139,124,0.25), transparent 60%),
+    linear-gradient(135deg, #f5ebe6 0%, #e8d9d1 50%, #f5ebe6 100%);
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.hero-image::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,0.03) 10px,
+      rgba(255,255,255,0.03) 20px
+    );
+  opacity: 0.5;
 }
 
 .hero-badge{
@@ -335,9 +359,27 @@ strong{ color: var(--text); font-weight: 600; }
   box-shadow: var(--shadow-soft);
   background:
     radial-gradient(600px 420px at 30% 15%, rgba(231,184,173,0.35), transparent 58%),
-    url("../img/portrait.jpg");
+    radial-gradient(500px 400px at 70% 80%, rgba(197,139,124,0.25), transparent 60%),
+    linear-gradient(135deg, #e8d9d1 0%, #f5ebe6 50%, #e8d9d1 100%);
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.about-photo::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,0.03) 10px,
+      rgba(255,255,255,0.03) 20px
+    );
+  opacity: 0.5;
+  border-radius: var(--radius-lg);
 }
 
 .about-highlights{
@@ -598,14 +640,84 @@ strong{ color: var(--text); font-weight: 600; }
 
 .site-footer{
   border-top: 1px solid rgba(31,26,23,0.08);
-  padding: 1.8rem 0 5rem; /* extra for floating cta on mobile */
+  padding: 3rem 0 5rem; /* extra for floating cta on mobile */
   background: rgba(255,255,255,0.35);
 }
 .footer-inner{
   display: grid;
+  gap: 2rem;
+}
+
+.footer-brand{
+  display: grid;
+  gap: 1rem;
+}
+
+.footer-desc{
+  max-width: 400px;
+  font-size: 0.94rem;
+}
+
+.footer-links{
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.footer-col h4{
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.footer-col nav{
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-col a{
+  font-size: 0.92rem;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-col a:hover{
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+.footer-bottom{
+  border-top: 1px solid rgba(31,26,23,0.08);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  display: grid;
   gap: 0.35rem;
 }
-.site-footer p{ margin: 0; }
+
+.footer-bottom p{ 
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 860px){
+  .footer-inner{
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+  }
+  
+  .footer-links{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .footer-bottom{
+    grid-column: 1 / -1;
+  }
+  
+  .site-footer{ padding-bottom: 2rem; }
+}
 
 /* Floating CTA */
 .floating-cta{
@@ -672,4 +784,330 @@ strong{ color: var(--text); font-weight: 600; }
 /* Subtle header elevation on scroll */
 .site-header.is-elevated{
   box-shadow: 0 14px 36px rgba(31,26,23,0.08);
+}
+
+/* -------------------------------------------------------
+  Premium Animations & Micro-interactions
+-------------------------------------------------------- */
+
+/* Fade-in animation for sections */
+.fade-in-element{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-element.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for cards */
+.card:nth-child(2).fade-in-element{ transition-delay: 0.1s; }
+.card:nth-child(3).fade-in-element{ transition-delay: 0.2s; }
+.card:nth-child(4).fade-in-element{ transition-delay: 0.3s; }
+.card:nth-child(5).fade-in-element{ transition-delay: 0.4s; }
+.card:nth-child(6).fade-in-element{ transition-delay: 0.5s; }
+
+/* Enhanced card hover effect */
+.card{
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(31,26,23,0.12);
+  border-color: rgba(197,139,124,0.25);
+}
+
+/* Smooth transitions for buttons */
+.btn{
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before{
+  width: 300px;
+  height: 300px;
+}
+
+.btn > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating CTA smooth transition */
+.floating-cta{
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease;
+}
+
+.floating-cta:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 28px 65px rgba(197,139,124,0.40);
+}
+
+/* Quote fade transition */
+.quote{
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Brand mark subtle animation */
+.brand-mark{
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand:hover .brand-mark{
+  transform: scale(1.08) rotate(5deg);
+}
+
+/* Nav link smooth transitions */
+.site-nav a{
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.site-nav a::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.site-nav a:hover::after{
+  width: 70%;
+}
+
+/* Text link animation */
+.text-link{
+  transition: all 0.3s ease;
+}
+
+.text-link:hover{
+  transform: translateX(4px);
+}
+
+/* Mini card hover */
+.mini-card{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(31,26,23,0.10);
+}
+
+/* Highlight items subtle hover */
+.highlight, .why-list li{
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.highlight:hover, .why-list li:hover{
+  transform: translateX(4px);
+  box-shadow: 0 8px 20px rgba(31,26,23,0.08);
+  border-color: rgba(197,139,124,0.20);
+}
+
+/* Icon button hover effect */
+.icon-btn{
+  transition: all 0.25s ease;
+}
+
+.icon-btn:hover{
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(31,26,23,0.10);
+}
+
+.icon-btn:active{
+  transform: scale(0.95);
+}
+
+/* Dot pill transition */
+.dot-pill{
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.dot-pill:hover{
+  transform: scale(1.3);
+  background: rgba(197,139,124,0.6);
+}
+
+/* Hero badge subtle animation */
+.hero-badge{
+  animation: subtleSlideUp 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes subtleSlideUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scroll snap for better UX */
+@media (prefers-reduced-motion: no-preference){
+  html{
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .fade-in-element{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Loading state for images */
+.hero-image, .about-photo{
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image::after, .about-photo::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.2) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer{
+  0%{ transform: translateX(-100%); }
+  100%{ transform: translateX(100%); }
+}
+
+/* Focus styles for accessibility */
+a:focus-visible, button:focus-visible{
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Selection styling */
+::selection{
+  background: var(--accent-2);
+  color: var(--text);
+}
+
+::-moz-selection{
+  background: var(--accent-2);
+  color: var(--text);
+}
+
+/* -------------------------------------------------------
+  Page Loader
+-------------------------------------------------------- */
+.page-loader{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content{
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  text-align: center;
+}
+
+.loader-mark{
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: radial-gradient(15px 15px at 30% 35%, rgba(255,255,255,0.9), transparent 55%),
+              linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 12px 30px rgba(197,139,124,0.30);
+  animation: loaderPulse 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes loaderPulse{
+  0%, 100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  50%{
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.loader-text{
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  animation: loaderFade 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderFade{
+  0%, 100%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
 }
