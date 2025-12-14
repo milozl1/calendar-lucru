@@ -1,20 +1,444 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Calendar Lucru</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h2 id="monthTitle"></h2>
-    <div class="nav">
-      <button id="prevBtn">⬅ Luna Anterioară</button>
-      <button id="nextBtn">Luna Următoare ➡</button>
-    </div>
-    <p id="userInfo"></p>
-    <div id="calendarGrid" class="calendar-grid"></div>
-    <div id="summary" style="margin-top: 20px"></div>
-    <script src="script.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atelier Élan — Cosmetică facială premium</title>
+  <meta name="description" content="Tratamente faciale premium, curate și personalizate. Rezultate vizibile, ritualuri blânde și o experiență calmă. Programează-te rapid pe WhatsApp." />
 
-  </body>
+  <!-- Fonts (elegant + modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Skip link (accessibility) -->
+  <a class="skip-link" href="#main">Sari la conținut</a>
+
+  <!-- Header -->
+  <header class="site-header" data-elevate>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Atelier Élan - Acasă">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Atelier Élan</span>
+          <span class="brand-tagline">Cosmetică facială premium</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="sr-only">Deschide meniul</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navigație principală">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#de-ce">De ce eu</a>
+        <a href="#testimoniale">Testimoniale</a>
+        <a href="#programari" class="nav-cta">Programează-te</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Ritualuri faciale • îngrijire curată • rezultate naturale</p>
+          <h1>Frumusețea ta, tratată cu grijă profesională.</h1>
+          <p class="lead">
+            Tratamente faciale premium, personalizate pentru pielea ta — într-un spațiu calm, igienă impecabilă și produse profesionale
+            alese cu atenție pentru rezultate vizibile, fără agresivitate.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programari" data-track="cta-hero-book">Programează-te</a>
+            <a class="btn btn-ghost" href="#servicii" data-track="cta-hero-services">Vezi serviciile</a>
+          </div>
+
+          <ul class="hero-trust">
+            <li><strong>+8 ani</strong> experiență în estetică facială</li>
+            <li><strong>Produse profesionale</strong> & protocoale sigure</li>
+            <li><strong>Programări rapide</strong> pe WhatsApp</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Imagine ambient salon">
+          <!-- Imagine: înlocuiește hero.jpg cu una reală -->
+          <div class="hero-card">
+            <div class="hero-image" role="img" aria-label="Ambient minimalist, tonuri nude/pastel"></div>
+
+            <div class="hero-badge">
+              <p class="hero-badge-title">Consultare & plan personalizat</p>
+              <p class="hero-badge-sub">Recomandări clare, fără promisiuni exagerate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESPRE MINE -->
+    <section id="despre" class="section">
+      <div class="container about-grid">
+        <div class="about-photo" role="img" aria-label="Portret cosmeticiană"></div>
+
+        <div class="about-copy">
+          <h2>Despre mine</h2>
+          <p class="section-intro">
+            Sunt <strong>Elena</strong>, cosmeticiană specializată în estetică facială și îngrijire personalizată.
+            Cred în frumusețea care arată bine și se simte bine: o piele echilibrată, sănătoasă, cu un glow natural.
+          </p>
+
+          <p>
+            Am construit Atelier Élan ca un spațiu în care tehnica se întâlnește cu delicatețea.
+            Lucrez cu protocoale moderne, produse profesionale și o abordare atentă la sensibilități, acneea adultă,
+            primele semne de îmbătrânire și perioadele în care pielea „nu cooperează”.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight">
+              <span class="highlight-title">Experiență</span>
+              <span class="highlight-body">8+ ani • estetică facială & îngrijire post-proceduri</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-title">Certificări</span>
+              <span class="highlight-body">Formări în tratamente anti-aging, acnee, exfoliere controlată</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-title">Stil de lucru</span>
+              <span class="highlight-body">Calm, empatic, orientat pe rezultate reale și confort</span>
+            </div>
+          </div>
+
+          <a class="text-link" href="#programari">Vreau o recomandare pentru tipul meu de ten →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICII -->
+    <section id="servicii" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Servicii</h2>
+          <p class="section-intro">
+            Tratamentele sunt adaptate pe loc: tip de ten, sezon, sensibilități, obiective. Obții un plan clar, fără „one-size-fits-all”.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Curățare facială profesională</h3>
+            <p>
+              Decongestionează porii, calmează inflamația și redă textura netedă.
+              Ideală când tenul pare încărcat, tern sau predispus la puncte negre.
+            </p>
+            <ul class="card-meta">
+              <li>Glow imediat</li>
+              <li>Fără agresivitate inutilă</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Tratamente anti-aging & fermitate</h3>
+            <p>
+              Ritualuri care susțin elasticitatea și luminozitatea: exfoliere controlată, hidratare activă și masaj facial.
+              Pentru un aspect odihnit, fin și elegant.
+            </p>
+            <ul class="card-meta">
+              <li>Textură mai uniformă</li>
+              <li>Look proaspăt, natural</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Tratamente acnee & post-acnee</h3>
+            <p>
+              Protocol echilibrant pentru ten cu imperfecțiuni: calmare, curățare corectă și suport pentru bariera pielii.
+              Fără promisiuni rapide, doar pași siguri și consecvenți.
+            </p>
+            <ul class="card-meta">
+              <li>Reducerea inflamației</li>
+              <li>Plan de îngrijire acasă</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Hidratare profundă & calming facial</h3>
+            <p>
+              Pentru piele sensibilă, deshidratată sau stresată. Reface confortul și reduce roșeața, cu texturi fine și
+              ingrediente prietenoase cu bariera cutanată.
+            </p>
+            <ul class="card-meta">
+              <li>Confort imediat</li>
+              <li>Aspect mai plin, luminos</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Pensat & stilizare sprâncene</h3>
+            <p>
+              Sprâncene curate, proporționate și naturale. Stilizare discretă care îți deschide privirea fără să pară „prea făcut”.
+            </p>
+            <ul class="card-meta">
+              <li>Formă adaptată trăsăturilor</li>
+              <li>Finisaj elegant</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Epilare delicată (zonă mică)</h3>
+            <p>
+              Epilare blândă în zona feței, cu atenție la confort și iritații. Ideală pentru întreținere rapidă și aspect îngrijit.
+            </p>
+            <ul class="card-meta">
+              <li>Rapid & curat</li>
+              <li>Respect pentru piele</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="note">
+          <p>
+            <strong>Notă:</strong> Durata și protocolul exact se stabilesc după o scurtă discuție despre rutina ta și obiective.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DE CE SĂ MĂ ALEGI -->
+    <section id="de-ce" class="section">
+      <div class="container why-grid">
+        <div class="why-copy">
+          <h2>De ce să mă alegi</h2>
+          <p class="section-intro">
+            În beauty, diferența o fac detaliile: igiena, selecția produselor, tehnica și modul în care te simți în timpul tratamentului.
+          </p>
+
+          <ul class="why-list">
+            <li>
+              <span class="why-title">Produse profesionale, atent selectate</span>
+              <span class="why-body">Texturi și active compatibile cu pielea sensibilă, fără „show” inutil.</span>
+            </li>
+            <li>
+              <span class="why-title">Igienă strictă, proceduri clare</span>
+              <span class="why-body">Consumabile de unică folosință, dezinfectare riguroasă, ritual curat.</span>
+            </li>
+            <li>
+              <span class="why-title">Abordare personalizată</span>
+              <span class="why-body">Ajustez tratamentul după sezon, sensibilități și istoricul tenului.</span>
+            </li>
+            <li>
+              <span class="why-title">Rezultate vizibile, naturale</span>
+              <span class="why-body">Mai multă luminozitate, textură mai fină, piele echilibrată.</span>
+            </li>
+            <li>
+              <span class="why-title">Comunicare calmă, empatică</span>
+              <span class="why-body">Îți explic pașii simplu și îți recomand doar ce are sens pentru tine.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="why-panel">
+          <div class="why-panel-inner">
+            <h3>Prima vizită?</h3>
+            <p>
+              Îți recomand o ședință de evaluare + tratament adaptat, ca să vedem exact ce are nevoie pielea ta acum.
+            </p>
+            <a class="btn btn-primary" href="#programari" data-track="cta-why-book">Programează-te</a>
+            <p class="tiny">
+              Preferi să întrebi ceva rapid? Scrie-mi pe WhatsApp și îți răspund cu recomandări.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALE -->
+    <section id="testimoniale" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Testimoniale</h2>
+          <p class="section-intro">
+            Feedback real, de la cliente care au vrut o îngrijire elegantă și rezultată din grijă, nu din promisiuni.
+          </p>
+        </div>
+
+        <div class="testimonials" data-slider>
+          <article class="quote is-active">
+            <p>
+              „Am venit cu ten sensibil și roșeață constantă. Elena a fost extrem de atentă, mi-a explicat fiecare pas și,
+              după 2 ședințe, pielea mea e mult mai calmă. Și atmosfera e superbă — te simți în siguranță.”
+            </p>
+            <footer>
+              <span class="quote-name">Ana, 32</span>
+              <span class="quote-meta">calming facial</span>
+            </footer>
+          </article>
+
+          <article class="quote">
+            <p>
+              „Curățarea facială a fost cea mai blândă pe care am făcut-o vreodată. Zero disconfort, iar textura pielii s-a schimbat vizibil.
+              Îmi place că recomandările pentru acasă sunt clare și realiste.”
+            </p>
+            <footer>
+              <span class="quote-name">Ioana, 27</span>
+              <span class="quote-meta">curățare profesională</span>
+            </footer>
+          </article>
+
+          <article class="quote">
+            <p>
+              „Am început pentru sprâncene și am rămas pentru faciale. Totul e curat, elegant și foarte bine organizat.
+              Rezultatele sunt naturale — exact cum îmi doream.”
+            </p>
+            <footer>
+              <span class="quote-name">Mara, 41</span>
+              <span class="quote-meta">sprâncene & tratamente</span>
+            </footer>
+          </article>
+
+          <div class="slider-controls" aria-label="Controale testimoniale">
+            <button type="button" class="icon-btn" data-prev aria-label="Testimonial anterior">‹</button>
+            <div class="dots" data-dots aria-hidden="true"></div>
+            <button type="button" class="icon-btn" data-next aria-label="Testimonial următor">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMĂRI -->
+    <section id="programari" class="section booking">
+      <div class="container booking-grid">
+        <div class="booking-copy">
+          <h2>Programări</h2>
+          <p class="section-intro">
+            Spune-mi ce îți dorești pentru tenul tău (curățare, acnee, anti-aging, hidratare) și îți recomand varianta potrivită.
+            Programarea durează 1 minut.
+          </p>
+
+          <div class="booking-actions">
+            <!-- Înlocuiește numărul și mesajul predefinit după nevoie -->
+            <a class="btn btn-primary"
+               href="https://wa.me/40700111222?text=Bun%C4%83%21%20A%C8%99%20vrea%20o%20programare%20la%20Atelier%20%C3%89lan.%20M%C4%83%20po%C8%9Bi%20ajuta%20cu%20o%20recomandare%20pentru%20tenul%20meu%3F"
+               target="_blank" rel="noopener"
+               data-track="cta-book-whatsapp">
+              Programează-te pe WhatsApp
+            </a>
+
+            <a class="btn btn-ghost"
+               href="tel:+40700111222"
+               data-track="cta-book-phone">
+              Sună: +40 700 111 222
+            </a>
+          </div>
+
+          <ul class="booking-points">
+            <li>Confirmare rapidă + recomandare de tratament</li>
+            <li>Intervale flexibile (în limita disponibilității)</li>
+            <li>Adresă și instrucțiuni de acces după confirmare</li>
+          </ul>
+        </div>
+
+        <div class="booking-card" aria-label="Card informații programări">
+          <div class="booking-card-inner">
+            <h3>Ce se întâmplă după ce îmi scrii</h3>
+            <ol class="steps">
+              <li><strong>Îmi spui</strong> ce te deranjează și ce obiectiv ai.</li>
+              <li><strong>Îți recomand</strong> tratamentul potrivit + durata estimată.</li>
+              <li><strong>Fixăm</strong> ziua și ora. Simplu, fără stres.</li>
+            </ol>
+            <p class="tiny">
+              Dacă ai piele sensibilă sau ești în tratamente dermatologice, spune-mi — adaptăm protocolul.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <h2>Contact</h2>
+          <p class="section-intro">
+            Pentru întrebări, programări sau recomandări rapide, mă poți contacta direct. Îți răspund cât de curând.
+          </p>
+
+          <div class="contact-cards">
+            <div class="mini-card">
+              <h3>Locație</h3>
+              <p>București • zona (completează)</p>
+              <p class="tiny">Adresa exactă se trimite după confirmarea programării.</p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Telefon</h3>
+              <p><a href="tel:+40700111222">+40 700 111 222</a></p>
+              <p class="tiny">Luni–Sâmbătă • pe bază de programare</p>
+            </div>
+
+            <div class="mini-card">
+              <h3>Social</h3>
+              <p class="social">
+                <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+                <span class="dot" aria-hidden="true">•</span>
+                <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+              </p>
+              <p class="tiny">Vezi rezultate, tips și disponibilitatea.</p>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a class="text-link" href="#programari">Deschide secțiunea de programări →</a>
+          </div>
+        </div>
+
+        <div class="contact-panel" aria-label="Panou contact">
+          <div class="contact-panel-inner">
+            <h3>Mesaj scurt, răspuns clar</h3>
+            <p>
+              Dacă nu știi ce să alegi, îmi poți scrie:
+              <strong>„Ten mixt, pori încărcați, vreau luminozitate”</strong> sau
+              <strong>„Acnee adultă + sensibilitate”</strong>.
+              Îți trimit o recomandare potrivită.
+            </p>
+
+            <a class="btn btn-primary"
+               href="https://wa.me/40700111222?text=Bun%C4%83%21%20A%C8%99%20vrea%20o%20recomandare%20pentru%20un%20tratament%20facial.%20Tenul%20meu%20este%3A%20"
+               target="_blank" rel="noopener"
+               data-track="cta-contact-whatsapp">
+              Scrie pe WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Atelier Élan. Toate drepturile rezervate.</p>
+      <p class="tiny">Design & frontend: premium, minimalist • optimizat pentru programări.</p>
+    </div>
+  </footer>
+
+  <!-- Floating CTA (mobile-friendly) -->
+  <a class="floating-cta"
+     href="https://wa.me/40700111222?text=Bun%C4%83%21%20A%C8%99%20vrea%20o%20programare%20la%20Atelier%20%C3%89lan."
+     target="_blank" rel="noopener"
+     aria-label="Deschide WhatsApp pentru programare"
+     data-track="cta-floating-whatsapp">
+    Programează-te
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
