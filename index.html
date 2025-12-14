@@ -1,20 +1,284 @@
 <!DOCTYPE html>
 <html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Calendar Lucru</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h2 id="monthTitle"></h2>
-    <div class="nav">
-      <button id="prevBtn">⬅ Luna Anterioară</button>
-      <button id="nextBtn">Luna Următoare ➡</button>
-    </div>
-    <p id="userInfo"></p>
-    <div id="calendarGrid" class="calendar-grid"></div>
-    <div id="summary" style="margin-top: 20px"></div>
-    <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Salon de cosmetică profesională - Tratamente faciale, îngrijire personalizată și rezultate vizibile">
+    <title>Elegance Studio - Cosmetică & Estetică Facială</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Elegance Studio</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#despre" class="nav-link">Despre Mine</a></li>
+                <li><a href="#servicii" class="nav-link">Servicii</a></li>
+                <li><a href="#testimoniale" class="nav-link">Testimoniale</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#programare" class="nav-link nav-cta">Programează-te</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  </body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Frumusețea ta, tratată cu grijă profesională</h1>
+            <p class="hero-subtitle">Transformă-ți rutina de îngrijire într-o experiență premium care îți redefinește strălucirea naturală</p>
+            <a href="#programare" class="btn btn-primary">Programează-te acum</a>
+        </div>
+    </section>
+
+    <!-- Despre Mine -->
+    <section class="despre" id="despre">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Despre mine</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="despre-content">
+                <div class="despre-image">
+                    <div class="image-placeholder"></div>
+                </div>
+                <div class="despre-text">
+                    <h3 class="despre-subtitle">Pasiunea pentru frumusețe, transformată în profesie</h3>
+                    <p>Cu peste 8 ani de experiență în domeniul cosmeticii profesionale, am dedicat fiecare zi învățării și perfecționării artei îngrijirii faciale. Fiecare tratament pe care îl ofer este rezultatul unei pregătiri constante și al pasiunii pentru a vedea cum frumusețea naturală a fiecărei cliente devine mai evidentă.</p>
+                    <p>Am absolvit cursuri de specializare în dermato-cosmetică și tratamente avansate, iar certificările mele includ:</p>
+                    <ul class="despre-list">
+                        <li>Specialist în tratamente faciale profesionale</li>
+                        <li>Certificare în dermato-cosmetică clinică</li>
+                        <li>Specialist în tratamente anti-aging</li>
+                        <li>Formare continuă în tehnici moderne de îngrijire</li>
+                    </ul>
+                    <p>Cred cu tărie că frumusețea începe cu încrederea în tine, iar eu sunt aici să te ajut să o regăsești prin tratamente personalizate, adaptate exact nevoilor tale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicii -->
+    <section class="servicii" id="servicii">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Serviciile mele</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Fiecare tratament este personalizat în funcție de tipul tău de ten și nevoile tale specifice</p>
+            </div>
+            <div class="servicii-grid">
+                <div class="serviciu-card">
+                    <div class="serviciu-icon">✨</div>
+                    <h3 class="serviciu-title">Curățare facială profundă</h3>
+                    <p class="serviciu-description">Elimină impuritățile și porii dilatați, lăsând tenul curat, proaspăt și pregătit să respire. Procedura include exfoliere, extracție delicată și mască calmantă.</p>
+                </div>
+                <div class="serviciu-card">
+                    <div class="serviciu-icon">🌸</div>
+                    <h3 class="serviciu-title">Tratamente anti-aging</h3>
+                    <p class="serviciu-description">Reducerea ridurilor fine și îmbunătățirea elasticității pielii prin tehnici avansate și produse cu ingrediente active concentrate, pentru un aspect vizibil mai tânăr.</p>
+                </div>
+                <div class="serviciu-card">
+                    <div class="serviciu-icon">💧</div>
+                    <h3 class="serviciu-title">Tratamente acnee</h3>
+                    <p class="serviciu-description">Abordare terapeutică pentru tenul acneic, combinând curățare profundă, tratamente specifice și sfaturi pentru îngrijirea zilnică, pentru o piele echilibrată.</p>
+                </div>
+                <div class="serviciu-card">
+                    <div class="serviciu-icon">🎋</div>
+                    <h3 class="serviciu-title">Hidratare intensivă</h3>
+                    <p class="serviciu-description">Tratamente care restaurează bariera de hidratare a pielii, oferind un aspect catifelat, luminos și sănătos. Ideal pentru tenul uscat sau deshidratat.</p>
+                </div>
+                <div class="serviciu-card">
+                    <div class="serviciu-icon">👁️</div>
+                    <h3 class="serviciu-title">Pensat & styling sprâncene</h3>
+                    <p class="serviciu-description">Conturare precisă care îți înrămează privirea și îți completează trăsăturile, adaptată formei feței tale pentru un rezultat natural și elegant.</p>
+                </div>
+                <div class="serviciu-card">
+                    <div class="serviciu-icon">🌿</div>
+                    <h3 class="serviciu-title">Tratamente sensibilizante</h3>
+                    <p class="serviciu-description">Protocoale delicate special create pentru tenul sensibil sau reactiv, care calmează, protejează și restaurează confortul pielii tale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- De ce să mă alegi -->
+    <section class="beneficii">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">De ce să mă alegi</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="beneficii-grid">
+                <div class="beneficiu-card">
+                    <div class="beneficiu-icon">🏆</div>
+                    <h3 class="beneficiu-title">Produse profesionale premium</h3>
+                    <p class="beneficiu-description">Folosesc exclusiv produse dermato-cosmetice testate clinic, cu ingrediente active de înaltă calitate, pentru rezultate sigure și eficiente.</p>
+                </div>
+                <div class="beneficiu-card">
+                    <div class="beneficiu-icon">✨</div>
+                    <h3 class="beneficiu-title">Standarde stricte de igienă</h3>
+                    <p class="beneficiu-description">Fiecare instrument este sterilizat, iar salonul respectă protocoale igienice riguroase pentru confortul și siguranța ta totală.</p>
+                </div>
+                <div class="beneficiu-card">
+                    <div class="beneficiu-icon">💝</div>
+                    <h3 class="beneficiu-title">Abordare personalizată</h3>
+                    <p class="beneficiu-description">Nu există două tenuri identice. Îți creez un plan de tratament adaptat exact nevoilor tale, pentru rezultate pe măsura așteptărilor tale.</p>
+                </div>
+                <div class="beneficiu-card">
+                    <div class="beneficiu-icon">🌟</div>
+                    <h3 class="beneficiu-title">Rezultate vizibile</h3>
+                    <p class="beneficiu-description">Clientele mele observă diferențe clare după primul tratament. Mă concentrez pe soluții eficiente care îți transformă tenul, nu doar îl îngrijesc superficial.</p>
+                </div>
+                <div class="beneficiu-card">
+                    <div class="beneficiu-icon">🕐</div>
+                    <h3 class="beneficiu-title">Program flexibil</h3>
+                    <p class="beneficiu-description">Înțeleg că timpul tău este prețios. Ofer programări flexibile, inclusiv seara și weekendul, pentru a se potrivi stilului tău de viață.</p>
+                </div>
+                <div class="beneficiu-card">
+                    <div class="beneficiu-icon">💬</div>
+                    <h3 class="beneficiu-title">Consultanță completă</h3>
+                    <p class="beneficiu-description">Primești sfaturi personalizate pentru îngrijirea zilnică și recomandări de produse, pentru ca rezultatele să dureze și acasă.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoniale -->
+    <section class="testimoniale" id="testimoniale">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ce spun clientele mele</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="testimoniale-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Am tenul sensibil și mi-a fost mereu teamă să încerc tratamente faciale. Aici am găsit în sfârșit pe cineva care înțelege nevoile pielii mele. Profesionalism și delicatețe la fiecare ședință!"</p>
+                    <p class="testimonial-author">— Ana-Maria, 34 ani</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"După primul tratament anti-aging, tenul meu arăta vizibil mai luminos și mai neted. Folosește produse de calitate excepțională și explică exact ce face și de ce. O recomand cu căldură!"</p>
+                    <p class="testimonial-author">— Cristina, 42 ani</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"M-am luptat cu acneea ani de zile. Tratamentele personalizate și sfaturile primite aici mi-au schimbat complet tenul. Sunt mai încrezătoare și îmi place să mă uit în oglindă!"</p>
+                    <p class="testimonial-author">— Elena, 28 ani</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Salonul are o atmosferă liniștită și primitoare. Mă simt răsfățată la fiecare vizită. Tratamentele sunt profesionale, iar rezultatele sunt exact ce mi-am dorit. O experiență premium!"</p>
+                    <p class="testimonial-author">— Ioana, 37 ani</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Pensatul sprâncenelor este impecabil, iar curățarea facială este cel mai relaxant moment al lunii mele. Atenția la detalii și grija cu care lucrează fac diferența!"</p>
+                    <p class="testimonial-author">— Mihaela, 31 ani</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Am recomandat-o tuturor prietenelor mele. Tratamentele de hidratare mi-au salvat tenul uscat, iar acum arată strălucitor. Merită fiecare leu investit în îngrijirea profesională!"</p>
+                    <p class="testimonial-author">— Raluca, 26 ani</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programări -->
+    <section class="programare" id="programare">
+        <div class="container">
+            <div class="programare-content">
+                <h2 class="programare-title">Pregătită pentru transformare?</h2>
+                <p class="programare-text">Fă primul pas către tenul pe care ți-l dorești. Programează-te acum și descoperă ce înseamnă îngrijirea profesională personalizată.</p>
+                <div class="programare-buttons">
+                    <a href="https://wa.me/40700000000?text=Bună! Aș dori să programez o consultație." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <span class="btn-icon">📱</span> Programare WhatsApp
+                    </a>
+                    <a href="tel:+40700000000" class="btn btn-phone">
+                        <span class="btn-icon">📞</span> Sună acum
+                    </a>
+                </div>
+                <p class="programare-note">Răspund de obicei în câteva minute. Consultația inițială este gratuită!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Unde mă găsești</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Locație</h3>
+                            <p>Strada Frumuseții, Nr. 15<br>București, Sector 1</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Telefon</h3>
+                            <p><a href="tel:+40700000000">+40 700 000 000</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💌</div>
+                        <div class="contact-details">
+                            <h3>Social Media</h3>
+                            <div class="social-links">
+                                <a href="https://instagram.com/elegancestudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                <a href="https://facebook.com/elegancestudio" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h3>Program</h3>
+                            <p>Luni - Vineri: 10:00 - 20:00<br>Sâmbătă: 10:00 - 18:00<br>Duminică: închis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <p>📍 Hartă Google Maps</p>
+                        <p class="map-note">Ușor accesibil cu transportul în comun sau mașina personală</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Elegance Studio</p>
+                <p class="footer-tagline">Frumusețea ta, tratată cu grijă profesională</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/elegancestudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                    <a href="https://facebook.com/elegancestudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                </div>
+                <p class="footer-copyright">&copy; 2024 Elegance Studio. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
