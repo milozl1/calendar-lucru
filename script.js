@@ -6,6 +6,13 @@ const navLinks = document.querySelectorAll('.nav-link');
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
+    
+    // Control body overflow based on menu state
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 });
 
 // Close mobile menu when clicking on a link
@@ -13,6 +20,7 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
@@ -93,14 +101,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Prevent page scrolling when mobile menu is open
-navToggle.addEventListener('click', () => {
-    if (navMenu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
-});
+// Prevent page scrolling when mobile menu is open - handled in toggle above
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
